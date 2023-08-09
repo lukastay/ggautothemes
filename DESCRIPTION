@@ -1,7 +1,7 @@
 Package: ggautothemes
 Type: Package
 Title: Quickly showcases your ggplot2 on many themes
-Version: 1.0
+Version: 1.2
 Author: Lukas Taylor
 Maintainer: Lukas Taylor <lukastay@umich.edu>
 Description: Takes in your ggplot2 graph and outputs a plot of multiple themes.

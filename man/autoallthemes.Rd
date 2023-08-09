@@ -22,10 +22,12 @@ Cycles through all theme packs.
 }
 \examples{
 
-lp <- ggplot(faithful, aes(waiting, eruptions, color = eruptions > 3))+
-geom_point()+
-  guides(color="none")+
-  theme(legend.position="none")
+library(ggplot2)
+
+p <- ggplot(faithful, aes(waiting, eruptions, color = eruptions > 3))
+p <- p + geom_point()
+p <- p + guides(color="none")
+p <- p + theme(legend.position="none")
 
 autoallthemes(p)
 
