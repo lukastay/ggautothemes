@@ -1,0 +1,20 @@
+Package: ggautothemes
+Type: Package
+Title: Quickly showcases your ggplot2 on many themes
+Version: 1.0
+Author: Lukas Taylor
+Maintainer: Lukas Taylor <lukastay@umich.edu>
+Description: Takes in your ggplot2 graph and outputs a plot of multiple themes
+    Once you have chosen a theme you can export the plot you like the best.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+  ggplot2,
+  patchwork,
+  ggthemes,
+  ggdark,
+  hrbrthemes,
+  ggtech,
+  extrafont
+LazyData: true
+RoxygenNote: 7.2.3
