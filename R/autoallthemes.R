@@ -63,13 +63,12 @@ autoallthemes <- function(ggplotvisual, HQsave = FALSE) {
       tiff(
         filename,
         units = "in",
-        width = 7,
-        height = 7,
+        width = 10,
+        height = 10,
         res = 1500
       )
-      plot(p)
+      plot(g)
       dev.off()
-      plot(p)
 
     } else{
       plot(p)
