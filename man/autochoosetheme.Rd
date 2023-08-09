@@ -4,7 +4,7 @@
 \alias{autochoosetheme}
 \title{autochoosetheme}
 \usage{
-autochoosetheme(ggplotvisual, theme, HQexport = FALSE)
+autochoosetheme(ggplotvisual, theme, HQexport = FALSE, size = "medium")
 }
 \arguments{
 \item{ggplotvisual}{Required. ggplot2 visual that you'd like to see in various themes.}
@@ -12,6 +12,8 @@ autochoosetheme(ggplotvisual, theme, HQexport = FALSE)
 \item{theme}{No Default. Enter the theme exactly as it appears in the title of the other function's plots.}
 
 \item{HQexport}{Default is FALSE. If set to TRUE, it will export a professional grade raster image of your chosen themed plot.}
+
+\item{size}{Default is medium. Enter string as "small" or "large" to set size of image exported by HQexport. Smaller sizes have larger text relative to the plot.}
 }
 \value{
 Returns a plot with the theme chosen.

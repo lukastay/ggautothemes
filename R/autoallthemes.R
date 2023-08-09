@@ -67,7 +67,7 @@ autoallthemes <- function(ggplotvisual, HQsave = FALSE) {
         height = 10,
         res = 1500
       )
-      plot(g)
+      plot(p)
       dev.off()
 
     } else{
