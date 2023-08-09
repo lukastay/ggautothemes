@@ -15,4 +15,7 @@ g <- ggplot(faithful)
 autoallthemes(g)
 ```
 
+
+![autoallthemes](https://github.com/lukastay/ggautothemes/blob/master/photos/showcase.gif?raw=true)
+
 ![autoallthemes](https://im2.ezgif.com/tmp/ezgif-2-cb568ce4a4.gif)
