@@ -4,6 +4,10 @@
 ##                                                                            --
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                            roxygen2 parameters                           ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #' @title autochoosetheme
 #'
 #' @param ggplotvisual Required. ggplot2 visual that you'd like to see in various themes.
@@ -46,6 +50,7 @@
 
 autochoosetheme <- function(ggplotvisual, theme, HQexport = FALSE, size = "medium") {
 
+  #........Adding Appropriate Theme Based On If Else Chain.........
 
   if (theme == "theme_grey") {
     g <- ggplotvisual +
@@ -228,6 +233,8 @@ autochoosetheme <- function(ggplotvisual, theme, HQexport = FALSE, size = "mediu
     return()
   }
 
+  #.............Professional Grade Raster Image Output.............
+
   if (HQexport == TRUE) {
     filename <- "ggautothemes_exported_graph.tiff"
 
@@ -259,6 +266,8 @@ autochoosetheme <- function(ggplotvisual, theme, HQexport = FALSE, size = "mediu
       print("Size not found. Returning.")
       return()
     }
+
+    #.....................Plotting And Returning.....................
 
     plot(g)
     dev.off()

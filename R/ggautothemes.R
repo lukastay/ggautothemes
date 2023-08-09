@@ -4,6 +4,10 @@
 ##                                                                            --
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                            roxygen2 parameters                           ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #' @title ggautothemes
 #'
 #' @param ggplotvisual Required. ggplot2 visual that you'd like to see in various themes.
@@ -38,6 +42,8 @@
 #' @import ggdark
 #' @import ggtech
 #' @import extrafont
+
+#............Adding Visuals Based On Theme Selection.............
 
 ggautothemes <- function(ggplotvisual, themecollection = "basic1"){
 
@@ -376,6 +382,8 @@ ggautothemes <- function(ggplotvisual, themecollection = "basic1"){
       scale_fill_tech(theme = "etsy")
 
     patched <- (p1 | p2) / (p3 | p4)
+
+  #........Error Detection And Returning Patchworked Visuals.......
 
   }else{
 
