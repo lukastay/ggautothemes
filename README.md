@@ -15,7 +15,7 @@ g <- ggplot(faithful)
 autoallthemes(g)
 ```
 
-![autoallthemes](https://github.com/lukastay/Lukas-Taylor-Repository/blob/master/showcase.gif?raw=true)
+![autoallthemes](https://github.com/lukastay/ggautothemes/blob/master/photos/showcase.gif?raw=true)
 
 Once You've Found A Theme You Like, You Can Plot It. Or Set HQExport To True To Export It As A Professional Grade Raster Image File:
 
@@ -23,4 +23,4 @@ Once You've Found A Theme You Like, You Can Plot It. Or Set HQExport To True To 
 autochoosetheme(g, theme = "theme_light", HQexport = TRUE, size = "small")
 ```
 
-![choose_theme](https://github.com/lukastay/Lukas-Taylor-Repository/blob/master/ggautothemes_exported_graph.tiff?raw=true)
+![choose_theme](https://github.com/lukastay/ggautothemes/blob/master/photos/ggautothemes_exported_graph.tiff?raw=true)
