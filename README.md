@@ -16,3 +16,9 @@ autoallthemes(g)
 ```
 
 ![autoallthemes](https://github.com/lukastay/ggautothemes/blob/master/photos/showcase.gif?raw=true)
+
+Once You've Found A Theme You Like, You Can Plot It. Or Set HQExport To True To Export It As A Professional Grade Raster Image File:
+
+```
+autochoosetheme(g, theme = "theme_light", HQexport = TRUE)
+```
