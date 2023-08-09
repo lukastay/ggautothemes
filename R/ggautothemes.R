@@ -20,17 +20,10 @@
 #'
 #' library(ggplot2)
 #'
-#' my_nested_list <- list(id=c(1,2,3,4,5),
-#' weight=c(1,1,1,1,1),
-#' choice1 = c(0,0,1,1,0),
-#' choice2 = c(1,0,0,1,1),
-#' choice3 = c(0,1,0,1,1),
-#' choice4 = c(0,1,0,1,1),
-#' choice5 = c(1,1,1,1,1))
-#'
-#' catadat <-  as.data.frame(do.call(cbind, my_nested_list))
-#'
-#' p <- ggplot(catadat)
+#' p <- ggplot(faithful, aes(waiting, eruptions, color = eruptions > 3)) +
+#' geom_point() +
+#'   guides(color="none") +
+#'   theme(legend.position="none")
 #'
 #' ggautothemes(p)
 #'
@@ -271,12 +264,7 @@ ggautothemes <- function(ggplotvisual, themecollection = "basic1"){
       theme_tech(theme = "etsy") +
       scale_fill_tech(theme = "etsy")
 
-    p2 <- ggplotvisual +
-      ggtitle("google") +
-      theme_tech(theme = "google") +
-      scale_fill_tech(theme = "google")
-
-    patched <- p1 | p2
+    patched <- p1
 
   }else if(themecollection=="ggtech1"){
 
@@ -363,6 +351,29 @@ ggautothemes <- function(ggplotvisual, themecollection = "basic1"){
     p4 <- ggplotvisual +
       ggtitle("dark_theme_void") +
       dark_theme_void()
+
+    patched <- (p1 | p2) / (p3 | p4)
+
+  }else if(themecollection=="outcasts"){
+
+    p1 <- ggplotvisual +
+      ggtitle("theme_stata") +
+      theme_stata() +
+      scale_fill_stata()
+
+    p2 <- ggplotvisual +
+      ggtitle("theme_ipsum") +
+      theme_ipsum() + # Arial Narrow
+      scale_fill_ipsum()
+
+    p3 <- ggplotvisual +
+      ggtitle("scale_fill_ft") +
+      scale_fill_ft()
+
+    p4 <- ggplotvisual +
+      ggtitle("etsy") +
+      theme_tech(theme = "etsy") +
+      scale_fill_tech(theme = "etsy")
 
     patched <- (p1 | p2) / (p3 | p4)
 

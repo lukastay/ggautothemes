@@ -8,6 +8,8 @@
 #'
 #' @param ggplotvisual Required. ggplot2 visual that you'd like to see in various themes.
 #'
+#' @param HQsave Defaults to FALSE. Set to TRUE to output high quality raster images of all the plots.
+#'
 #' @export autoallthemes
 #'
 #' @details
@@ -16,19 +18,10 @@
 #'
 #' @examples
 #'
-#' library(ggplot2)
-#'
-#' my_nested_list <- list(id=c(1,2,3,4,5),
-#' weight=c(1,1,1,1,1),
-#' choice1 = c(0,0,1,1,0),
-#' choice2 = c(1,0,0,1,1),
-#' choice3 = c(0,1,0,1,1),
-#' choice4 = c(0,1,0,1,1),
-#' choice5 = c(1,1,1,1,1))
-#'
-#' catadat <-  as.data.frame(do.call(cbind, my_nested_list))
-#'
-#' p <- ggplot(catadat)
+#' lp <- ggplot(faithful, aes(waiting, eruptions, color = eruptions > 3))+
+#' geom_point()+
+#'   guides(color="none")+
+#'   theme(legend.position="none")
 #'
 #' autoallthemes(p)
 #'
@@ -36,9 +29,10 @@
 #'
 #' Slowly showcases all available themes for a given visual
 #'
+#' @importFrom grDevices dev.off
+#' @importFrom grDevices tiff
 
-autoallthemes <- function(ggplotvisual){
-
+autoallthemes <- function(ggplotvisual, HQsave = FALSE) {
   sleep <- function(x)
   {
     p1 <- proc.time()
@@ -46,12 +40,39 @@ autoallthemes <- function(ggplotvisual){
     proc.time() - p1 # The cpu usage should be negligible
   }
 
-  themepacks <- c("basic1", "basic2", "ggthemes1", "ggthemes2", "ggthemes3", "ggthemes4", "ggthemes5", "hrbrthemes", "ggtech", "ggdark1", "ggdark2")
+  themepacks <-
+    c(
+      "basic1",
+      "basic2",
+      "ggthemes1",
+      "ggthemes2",
+      "ggthemes3",
+      "ggthemes4",
+      "ggdark1",
+      "ggdark2",
+      "outcasts"
+    )
 
-  for(themepack in themepacks){
-
+  for (themepack in themepacks) {
     p <- ggautothemes(ggplotvisual, themecollection = themepack)
-    plot(p)
+
+    if (HQsave == TRUE) {
+      filename <- paste(themepack, ".tiff", sep = "")
+      tiff(
+        filename,
+        units = "in",
+        width = 7,
+        height = 7,
+        res = 1500
+      )
+      plot(p)
+      dev.off()
+      plot(p)
+
+    } else{
+      plot(p)
+
+    }
 
     sleep(5)
 
