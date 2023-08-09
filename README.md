@@ -15,4 +15,4 @@ g <- ggplot(faithful)
 autoallthemes(g)
 ```
 
-![autoallthemes](toadd)
+![autoallthemes](https://im2.ezgif.com/tmp/ezgif-2-cb568ce4a4.gif)
