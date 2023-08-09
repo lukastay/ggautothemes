@@ -20,5 +20,7 @@ autoallthemes(g)
 Once You've Found A Theme You Like, You Can Plot It. Or Set HQExport To True To Export It As A Professional Grade Raster Image File:
 
 ```
-autochoosetheme(g, theme = "theme_light", HQexport = TRUE)
+autochoosetheme(g, theme = "theme_light", HQexport = TRUE, size = "small")
 ```
+
+![choose_theme](https://github.com/lukastay/ggautothemes/blob/master/photos/ggautothemes_exported_graph.tiff?raw=true)
